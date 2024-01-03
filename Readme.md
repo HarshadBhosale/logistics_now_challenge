@@ -12,8 +12,4 @@ close server at http://localhost:8888/
   docker-compose down
 ```
 
-For Documentation
-
-```
-http://localhost:8888/docs
-```
+For Documentation http://localhost:8888/docs
