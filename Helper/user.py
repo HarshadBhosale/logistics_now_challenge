@@ -26,8 +26,7 @@ def get_user(id: UUID):
     response_model=Optional[UserResponseModel],
 )
 def create_user(user: UserCreateModel):
-    user_exists = Users.select().where(Users.username == user.username)
-    if user_exists:
+    if user_exists := Users.select().where(Users.username == user.username):
         raise fastapi.HTTPException(
             fastapi.status.HTTP_400_BAD_REQUEST, "Username already exists"
         )
